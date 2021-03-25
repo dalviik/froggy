@@ -16,7 +16,7 @@ export interface Level {
 
 const levels: Level[] =
   [{
-    name: 'Froggy',
+    name: 'justify-content 3',
     instructions: '<p>Help all three frogs find their lilypads just by using <code>justify-content</code>. This time, the lilypads have lots of space all around them.</p><p>If you find yourself forgetting the possible values for a property, you can hover over the property name to view them. Try hovering over <code>justify-content</code>.</p>',
     board: [Color.GREEN, Color.YELLOW, Color.RED, Color.RED],
     style: { 'justify-content': 'space-around' },

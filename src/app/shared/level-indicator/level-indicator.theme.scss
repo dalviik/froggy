@@ -9,11 +9,27 @@
   .level-container {
     background-color: $dark-color;
 
+
     .arrow {
       cursor: pointer;
       background-color: $dark-button-color;
       font-size: 1em;
+      font-weight: bold;
 
+    }
+
+    .arrow:hover {
+      background-color: #9e9e9ea4;
+    }
+
+    .level-text {
+      cursor: pointer;
+    }
+
+    .currentLevel {
+      color: #b8ebfa;
+      font-weight: bold;
+      font-size: 1.2em;
     }
   }
 }

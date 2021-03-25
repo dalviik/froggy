@@ -1,18 +1,19 @@
 <!-- <div *ngFor="let l of levels; let i = index">{{i}}</div> -->
 
-<div class="level-container">
+<div
+    class="level-container"
+
+>
     <span
         class="arrow"
         (click)="previousLevel()"
     >
         &lt;&lt;
     </span>
-    <div class="level-text">
+    <div class="level-text" (click)="showAllLevels()">
         Level
-        <span class="current">{{currentLevel}}</span>
-        of
-        <span>{{maxLevel}}</span>
-
+        <span class="currentLevel">{{currentLevel}}</span>
+        of         {{maxLevel}}
     </div>
     <span
         class="arrow arrow_right"
@@ -20,4 +21,8 @@
     >
         &gt;&gt;
     </span>
+
+    <div class="modalLevels" *ngIf="modalLevels">
+        <span *ngFor="let l of levels;let i = index">{{i}}</span>
+    </div>
 </div>

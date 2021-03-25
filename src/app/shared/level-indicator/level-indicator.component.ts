@@ -36,6 +36,8 @@ export class LevelIndicatorComponent implements OnInit, OnChanges, ControlValueA
 
   disabled: boolean;
 
+  modalLevels: boolean = false;
+
   @Output()
   levelChange = new EventEmitter<number>();
 
@@ -69,7 +71,6 @@ export class LevelIndicatorComponent implements OnInit, OnChanges, ControlValueA
   }
 
   previousLevel(): void {
-    console.log('left');
     if (this.currentLevel > 1) {
 
       this.currentLevel--;
@@ -83,5 +84,11 @@ export class LevelIndicatorComponent implements OnInit, OnChanges, ControlValueA
       this.onChange(this.currentLevel);
     }
 
+  }
+
+  showAllLevels(): void {
+    console.log('Showing modal');
+    this.levels = new Array(this.maxLevel);
+    this.modalLevels = true;
   }
 }
