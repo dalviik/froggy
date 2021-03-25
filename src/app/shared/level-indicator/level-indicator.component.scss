@@ -1,11 +1,19 @@
-.level-indicator {
+.level-container {
   padding: 7px 28px;
-
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.level-text{
+  display: inline;
+  padding: 8px 20px;
 }
 
 .arrow {
   border-radius: 2px;
   padding: 11px 6px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .arrow:hover {

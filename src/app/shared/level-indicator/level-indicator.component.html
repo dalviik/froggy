@@ -1,21 +1,19 @@
 <!-- <div *ngFor="let l of levels; let i = index">{{i}}</div> -->
 
-<div class="level-indicator">
+<div class="level-container">
     <span
-        class="arrow arrow_left"
-        (click)="prevLevel()"
+        class="arrow"
+        (click)="previousLevel()"
     >
         &lt;&lt;
     </span>
-
-    <span class="level-indicator">
-        <span id="labelLevel">Level</span>
+    <div class="level-text">
+        Level
         <span class="current">{{currentLevel}}</span>
         of
-        <!-- <span>{{this.levels.length}}</span> -->
         <span>{{maxLevel}}</span>
-    </span>
 
+    </div>
     <span
         class="arrow arrow_right"
         (click)="nextLevel()"

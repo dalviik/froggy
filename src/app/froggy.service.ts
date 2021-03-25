@@ -34,13 +34,15 @@ export class FroggyService {
     return this.levels[0];
   }
 
-  public checkPositions(array): void {
+  public checkPositions(array): boolean {
     let winner: boolean = null;
     if (this._checkResult(array)) {
       winner = true;
       this._next(winner);
       this._gameSubject.complete();
+      return true
     }
+    return false;
   }
 
   private _checkResult(array): boolean {

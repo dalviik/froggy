@@ -44,7 +44,7 @@ export class BoardComponent implements OnInit, AfterViewInit {
   onStyteChange = () => {
     // Validate the positions.
     const elements = this.elements.map(e => e.getPosition());
-    this._froggyService.checkPositions(elements);
+    // this.winner = this._froggyService.(elements);
 
     if (this.winner) {
       console.log('Gano')
@@ -76,16 +76,6 @@ export class BoardComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  prevLevel() {
-    if (this.currentLevel > 1)
-      this.currentLevel--;
-  }
 
-  nextLevel() {
-
-    if (this.currentLevel < 24)
-      this.currentLevel++;
-    // this.currentLevel=this.currentLevel+1;
-  }
 
 }

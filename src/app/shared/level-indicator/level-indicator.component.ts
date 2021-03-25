@@ -68,7 +68,7 @@ export class LevelIndicatorComponent implements OnInit, OnChanges, ControlValueA
 
   }
 
-  prevLevel(): void {
+  previousLevel(): void {
     console.log('left');
     if (this.currentLevel > 1) {
 
@@ -79,7 +79,6 @@ export class LevelIndicatorComponent implements OnInit, OnChanges, ControlValueA
   }
   nextLevel(): void {
     if (this.currentLevel < this.maxLevel - 1) {
-
       this.currentLevel++;
       this.onChange(this.currentLevel);
     }

@@ -3,13 +3,15 @@
   $dark-color: map-get($theme, 'dark-color');
   $light-dark-color: map-get($theme, 'dark-light-color');
   $dark-font-color: map-get($theme, 'dark-font-color');
+  $dark-button-color: map-get($theme, 'dark-button-color');
 
-  .level-indicator {
+
+  .level-container {
     background-color: $dark-color;
 
     .arrow {
       cursor: pointer;
-      background-color: $light-dark-color;
+      background-color: $dark-button-color;
       font-size: 1em;
 
     }
