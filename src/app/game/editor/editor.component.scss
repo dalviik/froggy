@@ -1,0 +1,24 @@
+.editor {
+  display: flex;
+  font-family: 'Source Code Pro', monospace;
+
+  &__line-numbers {
+    text-align: end;
+    padding: 0.5em;
+  }
+
+  &__panel {
+    font-size: 18px;
+    flex: 1;
+    padding: 0.5em;
+
+    pre {
+      font-size: 18px;
+    }
+
+    input {
+      width: calc(100% - 18px);
+      margin-left: 18px;
+    }
+  }
+}

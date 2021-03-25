@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+    <section>
+      <fg-title [text]="level.name"></fg-title>
+
+      <fg-level-indicator [maxLevel]="50" [currentLevel]="currentLevel" [formControl]="levelValue"></fg-level-indicator>
+
+      <fg-editor [before]="level.before" [formControl]="editorValue" [after]="level.after"></fg-editor>
+      <fg-button class="next" text="NEXT" (click)="showValues()"></fg-button>
+    </section>
+  </div>
+  <div class="col">
+    <div class="board">
+      <section class="pound" [style]="editorValue.value">
+        <fg-frog fgPosition="f" *ngFor="let f of level.board" [color]="f"></fg-frog>
+      </section>
+      <section class="background" [ngStyle]="level.style">
+        <fg-lily-pad fgPosition="l" *ngFor="let f of level.board" [color]="f"></fg-lily-pad>
+      </section>
+    </div>
+  </div>
+</div>

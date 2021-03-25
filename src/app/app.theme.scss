@@ -1,0 +1,36 @@
+@import "./game/editor/editor.theme.scss";
+@import "./game/board/board.theme.scss";
+@import "./shared/level-indicator/level-indicator.theme.scss";
+
+$theme: (
+  'background-color': #43A047,
+  'font-color': white,
+  'alternative-background-color': #1B541E,
+  'dark-color': #7f8c8d,
+  'dark-light-color': #bdc3c7,
+  'dark-font-color': white
+);
+
+$theme-colors: (
+  'primary': #A1436A
+);
+
+@mixin components-theme($theme) {
+  @include editor-theme($theme);
+  @include board-theme($theme);
+  @include level-indicator-theme($theme);
+}
+
+@mixin layout-theme ($theme) {
+  $background-color: map-get($theme, 'background-color');
+  $font-color: map-get($theme, 'font-color');
+
+  background-color: $background-color !important;
+  color: $font-color !important;
+}
+
+
+body {
+  @include layout-theme($theme);
+  @include components-theme($theme);
+}

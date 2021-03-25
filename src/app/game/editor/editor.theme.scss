@@ -1,0 +1,18 @@
+@mixin editor-theme($theme) {
+
+  $dark-color: map-get($theme, 'dark-color');
+  $light-dark-color: map-get($theme, 'dark-light-color');
+  $dark-font-color: map-get($theme, 'dark-font-color');
+
+  .editor {
+    background-color: $dark-color;
+
+    &__line-numbers {
+      color: $dark-font-color;
+    }
+
+    &__panel {
+      background-color: $light-dark-color;
+    }
+  }
+}

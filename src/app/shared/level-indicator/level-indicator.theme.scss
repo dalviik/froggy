@@ -1,0 +1,17 @@
+@mixin level-indicator-theme($theme) {
+
+  $dark-color: map-get($theme, 'dark-color');
+  $light-dark-color: map-get($theme, 'dark-light-color');
+  $dark-font-color: map-get($theme, 'dark-font-color');
+
+  .level-indicator {
+    background-color: $dark-color;
+
+    .arrow {
+      cursor: pointer;
+      background-color: $light-dark-color;
+      font-size: 1em;
+
+    }
+  }
+}
