@@ -23,8 +23,6 @@ export class BoardComponent implements OnInit {
   winner: boolean;
   isDisabled: boolean;
 
-
-
   @ViewChildren(PositionDirective)
   elements: QueryList<PositionDirective>;
 
@@ -33,13 +31,14 @@ export class BoardComponent implements OnInit {
     this.currentLevel = 1;
 
     this.editorValue = new FormControl('justify-content: left;', { updateOn: 'blur' });
+
     this.editorValue.valueChanges.pipe(delay(100)).subscribe(this.onStyteChange);
-    // this.editorValue.valueChanges.subscribe(this.onStyteChange);
 
     this.levelValue = new FormControl(this.currentLevel, { updateOn: 'change' });
 
     this.levelValue.valueChanges.subscribe(level => {
       this.currentLevel = level;
+      this.winner = false;
       this.onLevelChange
     })
   }
@@ -47,25 +46,16 @@ export class BoardComponent implements OnInit {
   onStyteChange = () => {
     // Validate the positions.
     const elements = this.elements.map(e => e.getPosition());
+
     this.winner = this._froggyService.checkPositions(elements);
 
-    if (this.winner) {
-      console.log('Correct answer');
-    } else {
-      console.log('Wrong answer')
-    }
-
   }
 
-
-  /* onLevelChange() = (level:number) {
-    console.log(this.currentLevel)
-  }
- */
 
   onLevelChange = (level: number) => {
     console.log(this.currentLevel)
     this.currentLevel = level;
+    this.winner = false;
   }
 
   showValues() {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import levels, { Level } from './game/models';
+import { PositionDirective } from './game/position.directive';
 
 
 export interface GameStatus {
@@ -34,6 +35,7 @@ export class FroggyService {
     return this.levels[0];
   }
 
+
   public checkPositions(array): boolean {
     let winner: boolean = null;
     if (this._checkResult(array)) {
@@ -46,7 +48,10 @@ export class FroggyService {
   }
 
   private _checkResult(array): boolean {
+    console.log('checking result')
     let win = false;
+    console.log('ARRAY: ', array);
+
     const arrayFrogs = array.splice(0, (array.length / 2));
     const arrayLilypads: [] = array.splice(0, array.length);
     console.log('Frogs: ', arrayFrogs);
