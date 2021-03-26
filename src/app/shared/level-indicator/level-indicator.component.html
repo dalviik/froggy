@@ -13,7 +13,6 @@
     >
         Level
         <span class="currentLevel">{{currentLevel}}</span>
-
         of {{maxLevel}}
     </div>
     <span
@@ -23,10 +22,24 @@
         &gt;&gt;
     </span>
 
-    <!-- *ngIf="modalLevels" -->
     <div
         class="modal-levels"
+        *ngIf="modalLevels"
     >
-        <div *ngFor="let l of levels;let i = index" class="modal-item">{{i+1}}</div>
+
+        <div
+            (click)="modalLevels=false"
+            class="close-modal"
+        >
+            <span class="close-button">X</span>
+        </div>
+
+        <div
+            *ngFor="let l of levels;let i = index"
+            class="modal-item"
+            (click)="pickLevel(i+1)"
+        >
+            {{i+1}}
+        </div>
     </div>
 </div>

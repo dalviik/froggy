@@ -46,5 +46,14 @@
     .modal-item:hover {
       background-color: #003a1d;
     }
+    .close-button{
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1.2em;
+      background-color: tomato;
+    }
+    .close-button:hover{
+      background-color: red;
+    }
   }
 }

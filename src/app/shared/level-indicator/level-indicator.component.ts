@@ -86,6 +86,12 @@ export class LevelIndicatorComponent implements OnInit, OnChanges, ControlValueA
 
   }
 
+  pickLevel(level: number){
+    this.currentLevel = level;
+    this.modalLevels =false;
+    this.onChange(this.currentLevel);
+  }
+
   showAllLevels(): void {
     console.log('Showing modal');
     this.levels = new Array(this.maxLevel);
